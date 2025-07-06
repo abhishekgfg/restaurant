@@ -1,0 +1,180 @@
+.homepage-container {
+  padding: 0 100px;
+  background-color: #fff;
+}
+
+.homepage-section {
+  margin-top: 20px;
+}
+
+.homepage-section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.homepage-section-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: left;
+  margin-left: 30px;
+  
+}
+
+/* Wrap for center alignment of scrollable sections */
+.homepage-scroll-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.homepage-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scrollbar-width: none;
+}
+
+.homepage-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* Category Items */
+.homepage-category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100px;
+  flex-shrink: 0;
+}
+
+.homepage-category-item img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+.homepage-category-item p {
+  font-size: 16px;
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* Divider */
+.homepage-divider {
+  border: none;
+  border-top: 1px solid #e2e2e2;
+  margin: 24px 0;
+}
+
+/* Restaurant Card */
+.homepage-restaurant-card {
+  background: #fff;
+  border-radius: 16px;
+  /* box-shadow: 0 1px 8px rgba(0,0,0,0.06); */
+  min-width: 250px;
+  overflow: hidden;
+}
+
+.homepage-restaurant-image {
+  position: relative;
+  height: 160px;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+}
+
+.homepage-restaurant-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.homepage-restaurant-tag {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background-color: #000;
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  opacity: 0.8;
+}
+
+.homepage-restaurant-info {
+  padding: 12px;
+}
+
+.homepage-restaurant-info h3 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.homepage-rating-time {
+  font-size: 14px;
+  color: #333;
+  margin-top: 4px;
+}
+
+.homepage-desc,
+.homepage-area {
+  font-size: 14px;
+  color: #777;
+  margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+  /* Reduce padding on mobile */
+  .homepage-container {
+    padding: 0 16px;
+  }
+
+  /* Make title centered for small screens (optional) */
+  .homepage-section-title {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  /* Category: 3 items visible in viewport */
+  .homepage-scroll.homepage-category-scroll {
+    gap: 12px;
+  }
+
+  .homepage-category-item {
+    min-width: calc((100% - 2 * 12px) / 3); /* 3 items in row */
+  }
+
+  .homepage-category-item img {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* Restaurant: 2 items visible in viewport */
+  .homepage-scroll.homepage-restaurant-scroll {
+    gap: 12px;
+  }
+
+  .homepage-restaurant-card {
+    min-width: calc((100% - 12px) / 2); /* 2 cards in row */
+  }
+
+  .homepage-restaurant-image {
+    height: 130px;
+  }
+
+  .homepage-restaurant-info h3 {
+    font-size: 15px;
+  }
+
+  .homepage-rating-time,
+  .homepage-desc,
+  .homepage-area {
+    font-size: 13px;
+  }
+}
