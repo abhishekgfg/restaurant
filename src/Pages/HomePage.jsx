@@ -1,17 +1,68 @@
 import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "../styles/HomePage.css";
+import banner1 from "../Images/food-menu-restaurant-social-media-cover-template.png";
+// import TestimonialPage from "./TestimonialPage";
 
 const HomePage = () => {
-  const categoryData = [
-    { name: "Biryani", image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/6ef07bda-b707-48ea-9b14-2594071593d1_Biryani.png" },
-    { name: "Pizzas", image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/6ef07bda-b707-48ea-9b14-2594071593d1_Pizzas.png" },
-    { name: "Rolls", image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/17/58760e8e-324f-479e-88fa-31800120ea38_Rolls1.png" },
-    { name: "North Indian", image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2025/1/24/05a939eb-fd4e-4308-b989-d1c54f4421b3_northindian1.png" },
-    { name: "Chinese", image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2025/1/24/897bc750-6b57-4e7d-9365-87c1ab2c6d7e_Chinese2.png" },
-    { name: "Chole Bhature", image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/8f508de7-e0ac-4ba8-b54d-def9db98959e_chole%20bhature.png" },
-    { name: "Dosa", image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/6ef07bda-b707-48ea-9b14-2594071593d1_Dosa.png" },
-    { name: "Burgers", image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/8f508de7-e0ac-4ba8-b54d-def9db98959e_burger.png" },
+  const bannerImages = [
+     {
+    url: banner1,
+    title: "Hot & Fresh Pizzas",
+    button: "View Menu",
+  },
+    {
+      url: banner1,
+      title: "Hot & Fresh Pizzas",
+      button: "View Menu",
+    },
+    {
+      url: banner1,
+      title: "Authentic Biryani Feast",
+      button: "Explore Deals",
+    },
   ];
+
+  const categoryData = [
+  { name: "Biryani", image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/6ef07bda-b707-48ea-9b14-2594071593d1_Biryani.png" },
+  { name: "Pizzas", image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/6ef07bda-b707-48ea-9b14-2594071593d1_Pizzas.png" },
+  { name: "Rolls", image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/17/58760e8e-324f-479e-88fa-31800120ea38_Rolls1.png" },
+  { name: "North Indian", image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2025/1/24/05a939eb-fd4e-4308-b989-d1c54f4421b3_northindian1.png" },
+  { name: "Chinese", image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2025/1/24/897bc750-6b57-4e7d-9365-87c1ab2c6d7e_Chinese2.png" },
+  { name: "Chole Bhature", image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/8f508de7-e0ac-4ba8-b54d-def9db98959e_chole%20bhature.png" },
+  { name: "Dosa", image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/6ef07bda-b707-48ea-9b14-2594071593d1_Dosa.png" },
+  { name: "Burgers", image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/8f508de7-e0ac-4ba8-b54d-def9db98959e_burger.png" },
+  { name: "TEA", image: "" },
+  { name: "COFFEE", image: "" },
+  { name: "МОСКTAIL", image: "" },
+  { name: "BEVERAGES", image: "" },
+  { name: "BREAKFAST", image: "" },
+  { name: "ROLL", image: "" },
+  { name: "BURGER", image: "" },
+  { name: "NOODLE'S", image: "" },
+  { name: "SOUP", image: "" },
+  { name: "RICE & PULAО", image: "" },
+  { name: "DAL", image: "" },
+  { name: "SEASONAL VEGETABLE", image: "" },
+  { name: "PARATНА", image: "" },
+  { name: "9 TO 9 SPECIAL TANDOORI", image: "" },
+  { name: "9 TO 9 STARTER'S", image: "" },
+  { name: "CHICKEN MAIN COURSE", image: "" },
+  { name: "MAIN COURSE", image: "" },
+  { name: "9 TO 9 FAST FOOD COMBO", image: "" },
+  { name: "ADD ON", image: "" },
+  { name: "9 TO 9 SPECIAL THALI", image: "" },
+  { name: "9 TO 9 SPECIAL CHICKEN THALI", image: "" },
+  { name: "9 TO 9 SPECIAL COMВО", image: "" },
+  { name: "SHAKE", image: "" },
+  { name: "RECOMANDED", image: "" },
+  { name: "MOMO'S", image: "" },
+  { name: "SOUTH INDIAN", image: "" },
+  { name: "MUSHROOM SPECIAL", image: "" },
+  { name: "EGG SPECIAL", image: "" }
+];
 
   const restaurantData = [
     {
@@ -44,7 +95,7 @@ const HomePage = () => {
     {
       name: "McDonald's",
       rating: "4.3",
-      time: "30–35 mins",
+      time: "30–35 mins ",
       desc: "American",
       area: "Golambar",
       image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2025/1/9/041acbd3-37b1-4d3c-9aa3-9aa86c67d584_254135.JPG",
@@ -60,50 +111,78 @@ const HomePage = () => {
     }
   ];
 
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 700,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3500,
+    arrows: false
+  };
+
   return (
-   <div className="homepage-container">
+  <div className="homepage-container">
+      {/* Banner Slider Section */}
+      <div className="homepage-banner-wrapper">
+        <Slider {...sliderSettings} className="homepage-banner-slider">
+          {bannerImages.map((item, index) => (
+            <div className="homepage-banner-slide" key={index}>
+              <img src={item.url} alt={`Banner ${index}`} />
+              <div className="homepage-banner-overlay">
+                <h2>{item.title}</h2>
+                <button>{item.button}</button>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+
       {/* Category Section */}
-     <section className="homepage-section">
-  <h2 className="homepage-section-title">What's on your mind?</h2>
-<div className="homepage-scroll-wrapper">
-  <div className="homepage-scroll homepage-category-scroll">
-    {categoryData.map((item, index) => (
-      <div className="homepage-category-item" key={index}>
-        <img src={item.image} alt={item.name} />
-        <p>{item.name}</p>
-      </div>
-    ))}
-  </div>
-</div>
-
-</section>
-
-<hr className="homepage-divider" />
-
-<section className="homepage-section">
-  <h2 className="homepage-section-title">Top restaurant chains in Patna</h2>
-  <div className="homepage-scroll-wrapper">
-  <div className="homepage-scroll homepage-restaurant-scroll">
-    {restaurantData.map((res, index) => (
-      <div className="homepage-restaurant-card" key={index}>
-        <div className="homepage-restaurant-image">
-          <img src={res.image} alt={res.name} />
-          {res.tag && <div className="homepage-restaurant-tag">{res.tag}</div>}
+      <section className="homepage-section">
+        <h2 className="homepage-section-title">What's on your mind?</h2>
+        <div className="homepage-scroll-wrapper">
+          <div className="homepage-scroll homepage-category-scroll">
+            {categoryData.map((item, index) => (
+              <div className="homepage-category-item" key={index}>
+                <img src={item.image} alt={item.name} />
+                <p>{item.name}</p>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="homepage-restaurant-info">
-          <h3>{res.name}</h3>
-          <p className="homepage-rating-time">⭐ {res.rating} • {res.time}</p>
-          <p className="homepage-desc">{res.desc}</p>
-          <p className="homepage-area">{res.area}</p>
+      </section>
+
+      <hr className="homepage-divider" />
+
+      {/* Restaurant Section */}
+      <section className="homepage-section">
+        <h2 className="homepage-section-title">Top restaurant chains in Patna</h2>
+        <div className="homepage-scroll-wrapper">
+          <div className="homepage-scroll homepage-restaurant-scroll">
+            {restaurantData.map((res, index) => (
+              <div className="homepage-restaurant-card" key={index}>
+                <div className="homepage-restaurant-image">
+                  <img src={res.image} alt={res.name} />
+                  {res.tag && <div className="homepage-restaurant-tag">{res.tag}</div>}
+                </div>
+                <div className="homepage-restaurant-info">
+                  <h3>{res.name}</h3>
+                  <p className="homepage-rating-time">⭐ {res.rating} • {res.time}</p>
+                  <p className="homepage-desc">{res.desc}</p>
+                  <p className="homepage-area">{res.area}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    ))}
-  </div>
-</div>
-
-</section>
-
+      </section>
+      {/* <TestimonialPage /> */}
     </div>
+    
   );
+  
 };
+
 export default HomePage;

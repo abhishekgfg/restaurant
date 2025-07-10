@@ -1,19 +1,30 @@
 /* Header Layout */
 .header {
   max-width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 999;
   padding: 12px 24px;
-  border-bottom: 1px solid #e2e8f0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   background-color: white;
   color: #000;
   font-family: Arial, sans-serif;
+  border-bottom: 1px solid #e2e8f0;
   overflow-x: hidden;
-  flex-wrap: wrap;
-  /* height: 50px; */
-   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* ⬅ bottom shadow */
- 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+/* Change color when scrolled */
+.header.scrolled {
+  background-color: #f7f7f7; /* or any color you want */
+}
+
+.header.show {
+  transform: translateY(-100);
 }
 
 .header-left {
@@ -199,3 +210,53 @@
     display: none; /* Hide on desktop */
   }
 }
+
+
+
+.nav-item {
+  
+  align-items: center;
+  text-decoration: none; /* remove underline */
+  color: inherit;        /* use parent color */
+  font-size: 14px;
+}
+
+.nav-item .icon {
+  font-size: 24px;
+}
+
+/* Optional: Add hover styling if desired */
+.nav-item:hover {
+  color: #ff6f00; /* or any highlight color you prefer */
+}
+
+
+.nav-link {
+  text-decoration: none; /* removes underline */
+  color: inherit;         /* uses parent or current color */
+}
+
+.nav-link:visited {
+  color: inherit;
+}
+a {
+  text-decoration: none; /* prevents underline */
+  color: inherit;        /* uses parent color */
+}
+
+
+
+.back-arrow {
+  font-size: 24px;
+  margin-right: 10px;
+  color: #333;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .back-arrow {
+    display: inline-block;
+  }
+}
+

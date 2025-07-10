@@ -1,0 +1,11 @@
+{
+  "settings": {
+    "language_preference": "भाषा पसंद",
+    "choose_language": "ऐप के लिए अपनी पसंदीदा भाषा चुनें।",
+    "change_language": "भाषा बदलें"
+  },
+  "header": {
+    "home": "होम",
+    "cart": "कार्ट"
+  }
+}

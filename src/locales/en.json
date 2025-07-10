@@ -1,0 +1,11 @@
+{
+  "settings": {
+    "language_preference": "Language Preference",
+    "choose_language": "Choose your preferred language for the app.",
+    "change_language": "Change Language"
+  },
+  "header": {
+    "home": "Home",
+    "cart": "Cart"
+  }
+}

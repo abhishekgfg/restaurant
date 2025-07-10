@@ -143,11 +143,11 @@
 
   /* Category: 3 items visible in viewport */
   .homepage-scroll.homepage-category-scroll {
-    gap: 12px;
+    gap: 0px;
   }
 
   .homepage-category-item {
-    min-width: calc((100% - 2 * 12px) / 3); /* 3 items in row */
+    min-width: calc((100% - 2 * 0px) / 4); /* 3 items in row */
   }
 
   .homepage-category-item img {
@@ -176,5 +176,108 @@
   .homepage-desc,
   .homepage-area {
     font-size: 13px;
+  }
+}
+
+
+
+
+/* Full-width banner container with top margin */
+/* ✅ Full-width Banner Wrapper */
+.homepage-banner-wrapper {
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden; /* Prevents any child from overflowing */
+}
+
+/* ✅ Slick Slider should also take full width */
+.homepage-banner-slider {
+  width: 100%;
+}
+
+/* ✅ Each Slide Container */
+.homepage-banner-slide {
+  position: relative;
+}
+
+/* ✅ Image inside each banner slide */
+.homepage-banner-slide img {
+  width: 100vw;
+  height: 60vh;
+  object-fit: cover;
+  display: block;
+}
+/* Text and button on top of banner */
+.homepage-banner-overlay {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: white;
+  z-index: 10;
+  max-width: 80%;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
+}
+
+.homepage-banner-overlay h2 {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.homepage-banner-overlay button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.homepage-banner-overlay button:hover {
+  background-color: #d9363e;
+}
+
+/* Dots styling */
+.slick-dots {
+  bottom: 20px;
+}
+
+.slick-dots li button:before {
+  color: white;
+  font-size: 12px;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #ff4d4f;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .homepage-banner-slide img {
+    height: 40vh;
+    margin-top: -40px;
+  }
+
+  .homepage-banner-overlay {
+    top: 45%;
+    left: 6%;
+    max-width: 90%;
+  }
+
+  .homepage-banner-overlay h2 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+  }
+
+  .homepage-banner-overlay button {
+    font-size: 0.9rem;
+    padding: 10px 18px;
+  }
+
+  .slick-dots {
+    bottom: 10px;
   }
 }

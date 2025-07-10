@@ -1,0 +1,263 @@
+.menu-page {
+  padding: 1rem;
+  background-color: #fafafa;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0 1rem;
+}
+
+.menu-line {
+  flex: 1;
+  height: 1px;
+  background-color: #ddd;
+  margin: 0 10px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.veg-tag {
+  font-size: 0.95rem;
+  color: green;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.menu-section {
+  margin-bottom: 2rem;
+}
+
+.menu-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.menu-section-header h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.see-all {
+  color: #ff4d4f;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 0.75rem;
+  padding-bottom: 0.5rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.dish-card {
+  flex: 0 0 calc(100% / 3.2);
+  scroll-snap-align: start;
+  /* background: #fff; */
+  border-radius: 10px;
+  /* box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08); */
+  /* border: 1px solid #eee; */
+  transition: transform 0.2s ease-in-out;
+  height: 200px;
+}
+
+/* .dish-card:hover {
+  transform: translateY(-2px);
+} */
+
+.dish-image-container {
+  position: relative;
+  height: 70px;
+  overflow: hidden;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.dish-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.add-button {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  background: #ff4d4f;
+  color: white;
+  padding: 2px 6px;
+  font-size: 0.65rem;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dish-info {
+  padding: 0.4rem 0.5rem;
+}
+
+.dish-info h4 {
+  font-size: 0.85rem;
+  margin: 0.2rem 0 0.1rem;
+}
+
+.dish-price {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.8rem;
+}
+
+.dish-desc {
+  font-size: 0.7rem;
+  color: #777;
+  margin-top: 2px;
+  line-height: 1.2;
+}
+
+.veg-icon {
+  font-size: 0.75rem;
+  margin-right: 4px;
+}
+
+
+/* ==========================
+   📱 Desktop View Enhancements
+   ========================== */
+@media (min-width: 768px) {
+  .dish-card {
+    flex: 0 0 calc(100% / 4.2);
+    height: 240px;
+  }
+
+  .dish-image-container {
+    height: 100px;
+  }
+
+  .dish-info h4 {
+    font-size: 1rem;
+  }
+
+  .dish-price {
+    font-size: 0.95rem;
+  }
+
+  .dish-desc {
+    font-size: 0.8rem;
+  }
+
+  .add-button {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dish-card {
+    flex: 0 0 calc(100% / 5.2);
+    height: 260px;
+  }
+
+  .dish-image-container {
+    height: 120px;
+  }
+
+  .dish-info h4 {
+    font-size: 1.1rem;
+  }
+
+  .dish-price {
+    font-size: 1rem;
+  }
+
+  .dish-desc {
+    font-size: 0.85rem;
+  }
+  .section-title {
+  font-size: 24px;
+  font-weight: 600;
+ 
+  text-align: center;
+}
+}
+
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 3rem;
+  overflow-y: auto;
+}
+
+/* Modal Content */
+.modal-content {
+  background: #fff;
+  width: 95%;
+  max-width: 1024px;
+  border-radius: 10px;
+  padding: 1rem;
+  position: relative;
+}
+
+/* Header of modal */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.close-button {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Grid inside modal */
+.modal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+

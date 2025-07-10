@@ -1,0 +1,71 @@
+.category-scroll-wrapper {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 16px 12px;
+  background-color: #f8f8f8;
+  scroll-snap-type: x mandatory; /* Optional: adds snap effect */
+}
+
+/* Horizontal scrolling row */
+.category-row-scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 16px;
+}
+
+/* Individual card */
+.category-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  padding: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  width: 90px; /* Default for desktop */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-snap-align: start; /* Optional: snap effect */
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.category-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.category-name {
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #333;
+  text-align: justify;
+}
+
+/* Hide scrollbar */
+.category-scroll-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.category-scroll-wrapper {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ✅ Mobile View: Show 4 cards at once, scroll horizontal for rest */
+@media screen and (max-width: 768px) {
+  .category-card {
+    width: calc(25% - 12px); /* Show 4 cards in viewport */
+  }
+
+  .category-name {
+    font-size: 12px;
+  }
+}
