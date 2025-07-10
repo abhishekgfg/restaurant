@@ -610,6 +610,6 @@ a {
   padding: 11px 20px; /* Add inner padding here */
   width: 100%;
   gap: 10px;
-  margin-top: 25px;
+  margin-top: 20px;
   box-sizing: border-box; /* Ensures padding doesn't overflow container */
 }
