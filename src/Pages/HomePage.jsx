@@ -124,6 +124,7 @@ const HomePage = () => {
 
   return (
   <div className="homepage-container">
+    
       {/* Banner Slider Section */}
       <div className="homepage-banner-wrapper">
         <Slider {...sliderSettings} className="homepage-banner-slider">

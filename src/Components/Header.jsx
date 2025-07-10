@@ -5,28 +5,25 @@ import {
   FaShoppingBag,
 } from "react-icons/fa";
 import { AiFillHome } from "react-icons/ai";
-import { MdMenu, MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { MdMenu } from "react-icons/md";
 import { FiHelpCircle } from "react-icons/fi";
 import { PiPercentFill } from "react-icons/pi";
+import { Link } from "react-router-dom";
 import logo from "../assets/nine-to-nine-logo.png";
 import "../styles/Header.css";
-import { Link } from "react-router-dom";
-import { IoArrowBack } from "react-icons/io5";
-
 
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [showHeader, setShowHeader] = useState(true);
 
-  // Scroll hide/show logic
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setShowHeader(false); // scrolling down → hide
+        setShowHeader(false);
       } else {
-        setShowHeader(true); // scrolling up → show
+        setShowHeader(true);
       }
       setLastScrollY(currentScrollY);
     };
@@ -37,82 +34,97 @@ const Header = () => {
 
   return (
     <>
-      {/* Header */}
- <header className={`header ${showHeader ? "show" : "hide"}`}>
-  {/* Left Section */}
-  {/* Back Arrow – Mobile Only */}
-<IoArrowBack
-  className="back-arrow mobile-only"
-  onClick={() => window.history.back()}
-/>
-<img src={logo} alt="Logo" className="logo" />
-  <div
-    className="header-left"
-    onClick={() => setIsSidebarOpen(true)}
-    style={{ cursor: "pointer" }}
-  >
-    
-    {/* <img src={logo} alt="Logo" className="logo" /> */}
-    <div className="location-with-offers">
-      <div className="location">
-        Other <MdOutlineKeyboardArrowDown className="dropdown-icon" />
-      </div>
-    </div>
-    
-  </div>
+      {/* Desktop Header */}
+      <header className={`header ${showHeader ? "show" : "hide"} desktop-only`}>
+        <img src={logo} alt="Logo" className="logo" />
 
-  {/* Mobile-only Menu Button */}
-  <div className="nav-item mobile-only">
-    <Link to="/menu" className="nav-item">
-      <MdMenu className="icon" />
-      <span className="nav-text">Menu</span>
-    </Link>
-  </div>
-
-  
-
-
-
-        {/* Right Navigation - Desktop Only */}
-        <div className="header-right desktop-only">
+        <div className="header-right">
           <Link to="/" className="nav-item">
-  <AiFillHome className="icon" />
-  <span className="nav-text">Home</span>
-</Link>
+            <AiFillHome className="icon" />
+            <span className="nav-text">Home</span>
+          </Link>
 
-         <Link to="/menu" className="nav-item">
-        <MdMenu className="icon" />
-        <span className="nav-text">Menu</span>
-      </Link>
+          <Link to="/menu" className="nav-item">
+            <MdMenu className="icon" />
+            <span className="nav-text">Menu</span>
+          </Link>
+
           <div className="nav-item">
-            <FaSearch className="icon" />Search
+            <FaSearch className="icon" />
+            <span className="nav-text">Search</span>
           </div>
+
           <div className="nav-item offers">
             <PiPercentFill className="icon" />
-            Offers <span className="new-badge">NEW</span>
+            <span className="nav-text">Offers</span>
+            <span className="new-badge">NEW</span>
           </div>
-         <Link to="/help">
-  <div className="nav-item">
-    <FiHelpCircle className="icon" />
-    Help
-  </div>
-</Link>
-          <Link to="/account">
-  <div className="nav-item">
-    <FaUser className="icon" />
-    <span>Sign In</span>
-  </div>
-</Link>
 
-<Link to="/cart" className="nav-link">
-  <div className="nav-item">
-    <FaShoppingBag className="icon" />
-    <span>Cart</span>
-  </div>
-</Link>
+          <Link to="/help" className="nav-item">
+            <FiHelpCircle className="icon" />
+            <span className="nav-text">Help</span>
+          </Link>
 
+          <Link to="/account" className="nav-item">
+            <FaUser className="icon" />
+            <span>Sign In</span>
+          </Link>
+
+          <Link to="/cart" className="nav-item">
+            <FaShoppingBag className="icon" />
+            <span>Cart</span>
+          </Link>
         </div>
       </header>
+
+    <div className="mobile-train-header mobile-only">
+  {/* Fixed Top Section */}
+  <div className="train-header-fixed">
+    <div className="train-location-row">
+      <div className="train-location-left">
+        <span className="train-location-icon">📍</span>
+        <div>
+          <p className="train-station-name">Bettiah Station ▾</p>
+          <p className="train-station-address">
+            Railway Station Road, Saraswati Nagar, Banuch...
+          </p>
+        </div>
+      </div>
+      <div className="train-profile-icon">
+        <FaUser />
+      </div>
+    </div>
+
+    <div className="train-search-row">
+      <div className="train-search-box">
+        <FaSearch />
+        <input type="text" placeholder="Search for 'Pizza'" />
+      </div>
+      <select className="veg-toggle-dropdown">
+        <option value="veg">VEG 🟢</option>
+        <option value="non-veg">NON-VEG 🔴</option>
+        <option value="all">ALL ITEMS 🍽️</option>
+      </select>
+    </div>
+  </div>
+
+  {/* Scrollable Promo Section */}
+  <div className="train-promo-scroll">
+    <div className="train-promo-box">
+      <div className="train-promo-text">
+        <h3>Get Delicious Food Delivered Onboard!</h3>
+        <p>Hot meals served at over 100 travel points.</p>
+        <button className="pnr-button">Order now</button>
+      </div>
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNq-0cRn4Uoce0m1fklu8iZlR4qBFoagwvVQ&s"
+        alt="Food"
+        className="train-promo-image"
+      />
+    </div>
+  </div>
+</div>
+
 
       {/* Sidebar */}
       {isSidebarOpen && (
@@ -131,40 +143,28 @@ const Header = () => {
               <div className="get-location-text">Get current location</div>
               <div className="gps-text">Using GPS</div>
             </div>
-            
           </div>
-         {/* <Link to="/cart" className="nav-link">
-  <div className="nav-item">
-    <FaShoppingBag className="icon" />
-    <span>Cart</span>
-  </div>
-</Link> */}
-
         </div>
       )}
 
-      {/* Bottom Navigation - Mobile Only */}
+      {/* Mobile Bottom Nav */}
       <nav className="mobile-bottom-nav mobile-only">
         <Link to="/" className="nav-item">
-  <AiFillHome className="icon" />
-  <span>Home</span>
-</Link>
+          <AiFillHome className="icon" />
+          <span>Home</span>
+        </Link>
         <div className="nav-item">
           <FaSearch className="icon" />
           <span>Search</span>
         </div>
-       <Link to="/cart" className="nav-link">
-  <div className="nav-item">
-    <FaShoppingBag className="icon" />
-    <span>Cart</span>
-  </div>
-</Link>
-        <Link to="/account">
-  <div className="nav-item">
-    <FaUser className="icon" />
-    <span>Account</span>
-  </div>
-</Link>
+        <Link to="/cart" className="nav-item">
+          <FaShoppingBag className="icon" />
+          <span>Cart</span>
+        </Link>
+        <Link to="/account" className="nav-item">
+          <FaUser className="icon" />
+          <span>Account</span>
+        </Link>
       </nav>
     </>
   );
