@@ -158,7 +158,7 @@ const HomePage = () => {
 
       {/* Restaurant Section */}
       <section className="homepage-section">
-        <h2 className="homepage-section-title">Top restaurant chains in Patna</h2>
+        <h2 className="homepage-section-title">Explore menu</h2>
         <div className="homepage-scroll-wrapper">
           <div className="homepage-scroll homepage-restaurant-scroll">
             {restaurantData.map((res, index) => (
