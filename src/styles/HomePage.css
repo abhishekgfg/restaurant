@@ -337,9 +337,9 @@
 .more-on-swiggy-section {
   width: 100%;
   background: #fff;
- margin-left: -20;
+ 
   box-sizing: border-box;
-}
+
 
 /* Banner */
 .swiggy-banner {
@@ -348,7 +348,7 @@
   align-items: center;
   background-color: #ff671e;
   color: white;
-  padding: 16px;
+  padding: 25px;
   border-radius: 16px;
 }
 
@@ -392,7 +392,7 @@
 .swiggy-features-scroll {
   display: flex;
   gap: 12px;
-  overflow-x: auto;
+  overflow-x: none;
   padding-bottom: 8px;
 }
 
@@ -403,7 +403,7 @@
   border-radius: 16px;
   padding: 12px;
   text-align: center;
-  background: white;
+  background: rgb(239, 224, 214);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
 }
 
@@ -420,4 +420,5 @@
   line-height: 1.2;
   white-space: pre-line;
   margin-top: -10px;
+}
 }
