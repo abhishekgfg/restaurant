@@ -181,6 +181,8 @@
     font-size: 0.75rem;
     padding: 4px 8px;
   }
+  
+
 }
 
 @media (min-width: 1024px) {
@@ -259,5 +261,11 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .menu-page {
+    margin-top: 50px;
+  }
 }
 
