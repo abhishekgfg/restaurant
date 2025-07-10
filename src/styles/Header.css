@@ -461,7 +461,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 25px;
 }
 
 .train-location-left {
@@ -533,16 +533,6 @@ a {
 }
 
 /* ===== Promo Section ===== */
-.train-promo-box {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #ffefdb;
-  border-radius: 12px;
-  padding: 12px;
-  gap: 10px;
-  margin-top: 12px;
-}
 
 .train-promo-text h3 {
   margin: 0;
@@ -600,9 +590,25 @@ a {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
+
+
 /* ===== Scrollable Promo Section ===== */
 .train-promo-scroll {
-  margin-top: 136px; /* Adjust based on height of fixed section */
-  padding: 0 14px 14px;
+  margin-top: 136px;
+  padding: 0; /* Remove horizontal padding */
+  width: 100%;
 }
 
+/* ===== Promo Section ===== */
+.train-promo-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffefdb;
+  border-radius: 12px;
+  padding: 11px 20px; /* Add inner padding here */
+  width: 100%;
+  gap: 10px;
+  margin-top: 12px;
+  box-sizing: border-box; /* Ensures padding doesn't overflow container */
+}

@@ -7,6 +7,8 @@ import MenuPage from "./Pages/MenuPage";
 import CartPage from "./Pages/CartPage";
 import AccountPage from "./Pages/AccountPage"; // import at top
 import HelpSupportPage from './Pages/HelpSupportPage';
+import NineSpecialsPage from "./Pages/NineToNineSpecials";
+
 
 
 
@@ -20,6 +22,8 @@ function App() {
         <Route path="/cart" element={<CartPage />} />
   <Route path="/account" element={<AccountPage />} /> 
   <Route path="/help" element={<HelpSupportPage />} />
+  <Route path="/nine-specials" element={<NineSpecialsPage />} />
+
         
       </Routes>
       <Footer />

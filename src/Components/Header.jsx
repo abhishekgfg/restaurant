@@ -8,7 +8,7 @@ import { AiFillHome } from "react-icons/ai";
 import { MdMenu } from "react-icons/md";
 import { FiHelpCircle } from "react-icons/fi";
 import { PiPercentFill } from "react-icons/pi";
-import { Link } from "react-router-dom";
+import { Link ,useLocation } from "react-router-dom";
 import logo from "../assets/nine-to-nine-logo.png";
 import "../styles/Header.css";
 
@@ -31,6 +31,8 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
+const location = useLocation();
+const isHomePage = location.pathname === "/";
 
   return (
     <>
@@ -109,12 +111,15 @@ const Header = () => {
   </div>
 
   {/* Scrollable Promo Section */}
+ {isHomePage && (
   <div className="train-promo-scroll">
     <div className="train-promo-box">
       <div className="train-promo-text">
-        <h3>Get Delicious Food Delivered Onboard!</h3>
-        <p>Hot meals served at over 100 travel points.</p>
-        <button className="pnr-button">Order now</button>
+        <h3>Explore 9 to 9 Special Items!</h3>
+        <p>Special dishes made fresh daily with love & flavor..</p>
+        <Link to="/nine-specials" className="pnr-button">
+          Explore Specials
+        </Link>
       </div>
       <img
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNq-0cRn4Uoce0m1fklu8iZlR4qBFoagwvVQ&s"
@@ -123,6 +128,7 @@ const Header = () => {
       />
     </div>
   </div>
+)}
 </div>
 
 
@@ -157,6 +163,10 @@ const Header = () => {
           <FaSearch className="icon" />
           <span>Search</span>
         </div>
+         <Link to="/menu" className="nav-item">
+            <MdMenu className="icon" />
+            <span className="nav-text">Menu</span>
+          </Link>
         <Link to="/cart" className="nav-item">
           <FaShoppingBag className="icon" />
           <span>Cart</span>

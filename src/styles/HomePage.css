@@ -147,7 +147,7 @@
   }
 
   .homepage-category-item {
-    min-width: calc((100% - 2 * 0px) / 4); /* 3 items in row */
+    min-width: calc((100% - 2 * 20px) / 4); /* 3 items in row */
   }
 
   
@@ -281,10 +281,12 @@
 
 
 
+
+
 @media (max-width: 768px) {
   .homepage-category-item img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
   }
 }
 
@@ -292,3 +294,130 @@
 
 
 
+@media (max-width: 768px) {
+  /* Make container full width */
+  .homepage-scroll-wrapper {
+    padding: 0;
+    max-width: 100%;
+   
+  }
+
+  /* Adjust scroll area to wrap and slide remaining */
+  .homepage-scroll.homepage-category-scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 8px; /* small gap between 3 visible items */
+    padding: 0 8px;
+    margin-left: -15px;
+    margin-right: -10px;
+  }
+
+  .homepage-category-item {
+    flex: 0 0 calc(33.33% - 10px); /* 3 items in viewport */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .homepage-category-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+  }
+
+  .homepage-category-item p {
+    font-size: 14px;
+    margin-top: 4px;
+  }
+}
+
+
+
+.more-on-swiggy-section {
+  width: 100%;
+  background: #fff;
+ margin-left: -20;
+  box-sizing: border-box;
+}
+
+/* Banner */
+.swiggy-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ff671e;
+  color: white;
+  padding: 16px;
+  border-radius: 16px;
+}
+
+.banner-text h3 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.banner-text p {
+  margin: 4px 0 10px;
+  font-size: 14px;
+}
+
+.bold-orange {
+  font-weight: bold;
+}
+
+.order-now-btn {
+  background: #fff;
+  color: #ff671e;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.banner-image {
+  width: 100px;
+  height: auto;
+}
+
+/* Section title */
+.more-on-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 24px 0 12px;
+}
+
+/* Feature cards */
+.swiggy-features-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.swiggy-feature-card {
+  flex: 0 0 auto;
+  width: 40%;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 12px;
+  text-align: center;
+  background: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.swiggy-feature-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 6px;
+}
+
+.swiggy-feature-card p {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: pre-line;
+  margin-top: -10px;
+}

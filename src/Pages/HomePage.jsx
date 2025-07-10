@@ -154,6 +154,41 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+<section className="more-on-swiggy-section">
+  {/* Top Banner */}
+  <div className="swiggy-banner">
+    <div className="banner-text">
+      <h3>
+        FREE deliveries with <span className="bold-orange">one</span>
+      </h3>
+      <p>
+        at just <span className="bold-orange">₹1 for a month!</span>
+      </p>
+      <button className="order-now-btn">Order Now</button>
+    </div>
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWBtchYElxtkw_F6R6xluQE-crRNQyzhphPQ&s"
+      alt="Banner"
+      className="banner-image"
+    />
+  </div>
+
+  {/* Section Title */}
+  <h2 className="more-on-title">More on Swiggy</h2>
+
+  {/* Scrollable Feature Cards */}
+  <div className="swiggy-features-scroll">
+    <div className="swiggy-feature-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmEgG4CqTPF3ijGM5hHaTWbdU4KaUlq3Lj1Q&s" alt="Offer Zone" />
+      <p>OFFER<br />ZONE</p>
+    </div>
+    <div className="swiggy-feature-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv4Q1N6Dl1fiqMQX8Q-pTxi54AgZ-XtkJzOQ&s" alt="Bolt" />
+      <p>BOLT<br />FOOD IN 10 MINS</p>
+    </div>
+   
+  </div>
+</section>
 
       <hr className="homepage-divider" />
 
