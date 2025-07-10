@@ -805,10 +805,13 @@
 
   .settings-card h3 {
     font-size: 14px;
+    margin-bottom: 0px;
+    text-align: left;
   }
 
   .settings-card p {
     font-size: 12px;
+    
   }
 
   .settings-btn {

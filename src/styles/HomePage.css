@@ -52,8 +52,8 @@
 }
 
 .homepage-category-item img {
-  width: 110px;
-  height: 110px;
+  width: 140px;
+  height: 140px;
   object-fit: contain;
   border-radius: 50%;
   display: block;
@@ -150,10 +150,7 @@
     min-width: calc((100% - 2 * 0px) / 4); /* 3 items in row */
   }
 
-  .homepage-category-item img {
-    width: 80px;
-    height: 80px;
-  }
+  
 
   /* Restaurant: 2 items visible in viewport */
   .homepage-scroll.homepage-restaurant-scroll {
@@ -279,5 +276,14 @@
 
   .slick-dots {
     bottom: 10px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .homepage-category-item img {
+    width: 100px;
+    height: 100px;
   }
 }
