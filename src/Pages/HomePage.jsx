@@ -174,7 +174,7 @@ const HomePage = () => {
   </div>
 
   {/* Section Title */}
-  <h2 className="more-on-title">More on Swiggy</h2>
+  <h2 className="more-on-title">More from 9 to 9</h2>
 
   {/* Scrollable Feature Cards */}
   <div className="swiggy-features-scroll">
@@ -186,7 +186,10 @@ const HomePage = () => {
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv4Q1N6Dl1fiqMQX8Q-pTxi54AgZ-XtkJzOQ&s" alt="Bolt" />
       <p>BOLT<br />FOOD IN 10 MINS</p>
     </div>
-   
+    <div className="swiggy-feature-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv4Q1N6Dl1fiqMQX8Q-pTxi54AgZ-XtkJzOQ&s" alt="Bolt" />
+      <p>BOLT<br />FOOD IN 10 MINS</p>
+    </div>
   </div>
 </section>
 

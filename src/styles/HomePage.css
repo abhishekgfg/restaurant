@@ -11,6 +11,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 16px;
+  
 }
 
 .homepage-section-title {
@@ -27,6 +28,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 16px;
+  
 }
 
 .homepage-scroll {
@@ -35,6 +37,7 @@
   overflow-x: auto;
   padding-bottom: 10px;
   scrollbar-width: none;
+  border-radius: 20px;
 }
 
 .homepage-scroll::-webkit-scrollbar {
@@ -190,7 +193,10 @@
 
 /* ✅ Slick Slider should also take full width */
 .homepage-banner-slider {
+   position: relative;
   width: 100%;
+   border-radius: 30px;
+    overflow: hidden;
 }
 
 /* ✅ Each Slide Container */
@@ -204,14 +210,20 @@
   height: 60vh;
   object-fit: cover;
   display: block;
+   border-radius: 50px;
 }
 /* Text and button on top of banner */
 .homepage-banner-overlay {
+  border-radius: 50px;
   position: absolute;
+   display: flex;
+  flex-direction: column;
   top: 50%;
   left: 10%;
   transform: translateY(-50%);
   color: white;
+   justify-content: center;
+  align-items: center;
   z-index: 10;
   max-width: 80%;
   text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
@@ -256,12 +268,14 @@
   .homepage-banner-slide img {
     height: 40vh;
     margin-top: -40px;
+     border-radius: 50px;
   }
 
   .homepage-banner-overlay {
     top: 45%;
     left: 6%;
     max-width: 90%;
+     border-radius: 50px;
   }
 
   .homepage-banner-overlay h2 {
@@ -299,6 +313,7 @@
   .homepage-scroll-wrapper {
     padding: 0;
     max-width: 100%;
+    
    
   }
 
@@ -333,13 +348,11 @@
 }
 
 
-
 .more-on-swiggy-section {
   width: 100%;
   background: #fff;
- 
   box-sizing: border-box;
-
+}
 
 /* Banner */
 .swiggy-banner {
@@ -348,18 +361,21 @@
   align-items: center;
   background-color: #ff671e;
   color: white;
-  padding: 25px;
+  padding: 50px;
   border-radius: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+  
 }
 
 .banner-text h3 {
-  font-size: 18px;
+  font-size: 30px;
   margin: 0;
 }
 
 .banner-text p {
   margin: 4px 0 10px;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .bold-orange {
@@ -392,13 +408,13 @@
 .swiggy-features-scroll {
   display: flex;
   gap: 12px;
-  overflow-x: none;
+  overflow-x: auto; /* Enable horizontal scroll */
   padding-bottom: 8px;
 }
 
 .swiggy-feature-card {
   flex: 0 0 auto;
-  width: 40%;
+  width: 30%;
   border: 1px solid #eee;
   border-radius: 16px;
   padding: 12px;
@@ -421,4 +437,56 @@
   white-space: pre-line;
   margin-top: -10px;
 }
+
+/* =========== MOBILE STYLES =========== */
+@media (max-width: 768px) {
+  .swiggy-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+  }
+
+  .banner-text h3 {
+    font-size: 16px;
+  }
+
+  .banner-text p {
+    font-size: 13px;
+  }
+
+  .order-now-btn {
+    margin-top: 10px;
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .banner-image {
+    width: 80px;
+    align-self: flex-end;
+    margin-top: -90px;
+  }
+
+  .more-on-title {
+    font-size: 16px;
+    margin: 16px 0 10px;
+  }
+
+  .swiggy-features-scroll {
+    gap: 10px;
+    padding-bottom: 10px;
+  }
+
+  .swiggy-feature-card {
+    width: 23%;
+    padding: 10px;
+  }
+
+  .swiggy-feature-card img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .swiggy-feature-card p {
+    font-size: 12px;
+  }
 }
