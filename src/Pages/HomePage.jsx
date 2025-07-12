@@ -3,25 +3,28 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../styles/HomePage.css";
-import banner1 from "../Images/food-menu-restaurant-social-media-cover-template.png";
+// import banner1 from "../Images/food-menu-restaurant-social-media-cover-template.png";
+import banner1 from "../Images/Orange White Cooking Recipe YouTube Thumbnail.png";
+import banner2 from "../Images/Black and Green Modern Delicious Burger Banner.png";
+import banner3 from "../Images/Orange And White Illustrative Chicken Biryani Promotion Banner.png";
 // import TestimonialPage from "./TestimonialPage";
 
 const HomePage = () => {
   const bannerImages = [
      {
     url: banner1,
-    title: "Hot & Fresh Pizzas",
-    button: "View Menu",
+    // title: "Hot & Fresh Pizzas",
+    // button: "View Menu",
   },
     {
-      url: banner1,
-      title: "Hot & Fresh Pizzas",
-      button: "View Menu",
+      url: banner2,
+      // title: "Hot & Fresh Pizzas",
+      // button: "View Menu",
     },
     {
-      url: banner1,
-      title: "Authentic Biryani Feast",
-      button: "Explore Deals",
+      url: banner3,
+      // title: "Authentic Biryani Feast",
+      // button: "Explore Deals",
     },
   ];
 
@@ -131,10 +134,10 @@ const HomePage = () => {
           {bannerImages.map((item, index) => (
             <div className="homepage-banner-slide" key={index}>
               <img src={item.url} alt={`Banner ${index}`} />
-              <div className="homepage-banner-overlay">
+              {/* <div className="homepage-banner-overlay">
                 <h2>{item.title}</h2>
                 <button>{item.button}</button>
-              </div>
+              </div> */}
             </div>
           ))}
         </Slider>

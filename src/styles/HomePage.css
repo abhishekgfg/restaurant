@@ -8,7 +8,7 @@
 }
 
 .homepage-section-inner {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 16px;
   
@@ -28,6 +28,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 16px;
+  object-fit: cover;
   
 }
 
@@ -38,6 +39,8 @@
   padding-bottom: 10px;
   scrollbar-width: none;
   border-radius: 20px;
+  object-fit: contain;
+  
 }
 
 .homepage-scroll::-webkit-scrollbar {
@@ -197,6 +200,7 @@
   width: 100%;
    border-radius: 30px;
     overflow: hidden;
+    object-fit: cover;
 }
 
 /* ✅ Each Slide Container */
@@ -207,7 +211,7 @@
 /* ✅ Image inside each banner slide */
 .homepage-banner-slide img {
   width: 100vw;
-  height: 60vh;
+  height: 70vh;
   object-fit: cover;
   display: block;
    border-radius: 50px;
@@ -266,6 +270,7 @@
 /* Responsive for mobile */
 @media (max-width: 768px) {
   .homepage-banner-slide img {
+    width: 500px;
     height: 40vh;
     margin-top: -40px;
      border-radius: 50px;
@@ -313,7 +318,7 @@
   .homepage-scroll-wrapper {
     padding: 0;
     max-width: 100%;
-    
+    object-fit: cover;
    
   }
 
