@@ -12,47 +12,77 @@ import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/nine-to-nine-logo.png";
 import "../styles/Header.css";
 
+// Suggestions array for rotating placeholder
+const suggestions = [
+  "Pizza",
+  "Burger",
+  "Paneer Tikka",
+  "Ice Cream",
+  "Biryani",
+  "Chinese",
+];
+
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [showHeader, setShowHeader] = useState(true);
   const [isMobileSticky, setIsMobileSticky] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Rotating search suggestion
+  const [index, setIndex] = useState(0);
+  const [placeholder, setPlaceholder] = useState(`Search for ${suggestions[0]}`);
 
   const location = useLocation();
   const isHomePage = location.pathname === "/";
-  const [isLoading, setIsLoading] = useState(true);
-useEffect(() => {
-  // Simulate loading delay
-  const timeout = setTimeout(() => setIsLoading(false), 1000); // Adjust time as needed
-  return () => clearTimeout(timeout);
-}, []);
+
+  // Loading delay
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsLoading(false), 1000);
+    return () => clearTimeout(timeout);
+  }, []);
+
+  // Header scroll logic
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       setShowHeader(currentScrollY < lastScrollY || currentScrollY < 100);
       setLastScrollY(currentScrollY);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
+
+  // Mobile sticky header trigger
   useEffect(() => {
-  const handleScroll = () => {
-    setIsMobileSticky(window.scrollY > 100); // show sticky after 100px scroll
-  };
+    const handleScroll = () => {
+      setIsMobileSticky(window.scrollY > 100);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+  // Rotate placeholder every 2s
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % suggestions.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
 
+  useEffect(() => {
+    setPlaceholder(`Search for ${suggestions[index]}`);
+  }, [index]);
 
-if (isLoading) {
-  return (
-    <div className="loader-container">
-      <div className="spinner" />
-    </div>
-  );
-}
+  // ✅ Move loader AFTER all hooks
+  if (isLoading) {
+    return (
+      <div className="loader-container">
+        <div className="spinner" />
+      </div>
+    );
+  }
+
 
   return (
     <>
@@ -109,13 +139,13 @@ if (isLoading) {
     </div>
     <hr className="hero-divider" />
     <div className="hero-search-mobile">
-  <FaSearch className="search-icon" />
-  <input
-    type="text"
-    placeholder="Search for restaurants, items, or cuisines"
-    className="search-input-mobile"
-  />
-</div>
+      <FaSearch className="search-icon" />
+      <input
+        type="text"
+        placeholder={placeholder}
+        className="search-input-mobile"
+      />
+    </div>
 
   </div>
   
