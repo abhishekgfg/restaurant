@@ -418,198 +418,246 @@ a {
 
 
  
-
-
-
-
- /* ===== Mobile Train Header Wrapper ===== */
-.mobile-train-header {
-  display: none;
-  height: 100vh;
-  overflow: hidden;
-  background: linear-gradient(to bottom, #c78937, #f6d2b0);
+/* Common Styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
   padding: 0;
-  border-radius: 0 0 16px 16px;
 }
 
-@media (max-width: 768px) {
-  .mobile-train-header {
-    display: flex;
-    flex-direction: column;
-  }
+/* Hero Wrapper for Mobile */
+.swiggy-hero-mobile-only {
+  background-color: #ff5a1f;
+  color: #fff;
+  padding: 0 16px 20px; /* consistent left/right padding */
+  font-family: 'Segoe UI', sans-serif;
 }
 
-/* ===== Fixed Top Section ===== */
-.train-header-fixed {
-  position: sticky;
-  top: 0;
-  background: linear-gradient(to bottom, #c7a981, #ffe9d5);
-  z-index: 10;
-  padding: 14px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-/* ===== Scrollable Promo Section ===== */
-.train-promo-scroll {
-  flex: 1;
-  overflow-y: auto;
-  padding: 0 14px 14px;
-}
-
-/* ===== Station Row ===== */
-.train-location-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 25px;
-}
-
-.train-location-left {
-  display: flex;
-  gap: 8px;
-  align-items: flex-start;
-  cursor: pointer;
-}
-
-.train-location-icon {
-  font-size: 20px;
-  margin-top: 4px;
-}
-
-.train-station-name {
-  font-weight: 600;
-  font-size: 15px;
-  margin: 0;
-}
-
-.train-station-address {
-  font-size: 12px;
-  color: #555;
-  margin: 0;
-}
-
-.train-profile-icon {
-  background: #fcfbfb;
-  font-size: 22px;
-  color: #333;
-  margin-right: 50px;
-}
-
-/* ===== Search and Filter Row ===== */
-.train-search-row {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 14px;
-}
-
-.train-search-box {
-  flex: 1;
-  background: #fff;
-  border-radius: 10px;
-  padding: 8px 12px;
-  display: flex;
-  align-items: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.train-search-box input {
-  border: none;
-  outline: none;
-  flex: 1;
-  font-size: 14px;
-  margin-left: 6px;
-}
-
-.veg-toggle-dropdown {
-  width: 80px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  background-color: #fff;
-  font-weight: 600;
-  cursor: pointer;
-  color: #333;
-  margin-right: 30px;
-}
-
-/* ===== Promo Section ===== */
-
-.train-promo-text h3 {
-  margin: 0;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.train-promo-text p {
-  margin: 4px 0 10px;
-  font-size: 12px;
-  color: #555;
-}
-
-.pnr-button {
-  background-color: #ff6500;
-  border: none;
-  border-radius: 20px;
-  color: white;
-  padding: 6px 14px;
-  font-size: 13px;
-  cursor: pointer;
-}
-
-.train-promo-image {
-  width: 80px;
-  height: auto;
-  border-radius: 10px;
+/* Sticky Top Nav */
+.hero-sticky-top {
+ -sizing: border-box;
 }
 
 
-
-/* Main mobile header container */
-.mobile-train-header {
-  display: none;
-  background: linear-gradient(to bottom,#ffefdb, #ffe9d5);
-  padding: 0;
-  border-radius: 0 0 16px 16px;
+.hero-sticky-top {
+  background-color: #ff5a1f;
+  padding: 16px;
+  box-sizing: border-box;
+  width: 100%;
+  transition: all 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .mobile-train-header {
-    display: block;
-  }
-}
-
-/* ===== Fixed Top Section ===== */
-.train-header-fixed {
+.hero-sticky-top.sticky-active {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  z-index: 999;
-  background: linear-gradient(to bottom, #fff4e6, #ffe9d5);
-  padding: 14px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  right: 0;
+  z-index: 1000;
+  animation: slideDown 0.3s ease-in-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 
 
-/* ===== Scrollable Promo Section ===== */
-.train-promo-scroll {
-  margin-top: 136px;
-  padding: 0; /* Remove horizontal padding */
+
+
+/* Divider Line */
+.hero-divider {
+  margin: 15px 0;
+  border: none;
+  border-top: 1px solid #ddd;
   width: 100%;
- 
 }
 
-/* ===== Promo Section ===== */
-.train-promo-box {
+/* Top Nav Flex */
+.swiggy-top-nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  background: #ffefdb;
-  border-radius: 12px;
-  padding: 11px 20px; /* Add inner padding here */
-  width: 100%;
-  gap: 10px;
-  margin-top: 20px;
-  box-sizing: border-box; /* Ensures padding doesn't overflow container */
+  gap: 12px;
+  font-size: 13px;
+  margin-bottom: 8px;
 }
+
+/* Search Row Padding Reset */
+.search-bar-row,
+.swiggy-card-section {
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+}
+
+/* Optional: Add spacing between sticky and title */
+.hero-title {
+
+  text-align: center;
+}
+
+/* Search Bar Row */
+.search-bar-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-direction: row;
+}
+
+.location-dropdown {
+  background: #fff;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.location-dropdown select {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+}
+
+/* Search Box */
+.hero-search-box {
+  background: #fff;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 250px;
+}
+
+.hero-search-box input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding-left: 8px;
+}
+
+/* Card Section */
+.swiggy-card-section {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Card Box */
+.swiggy-card {
+  background: #fff;
+  color: #333;
+  padding: 20px;
+  border-radius: 12px;
+  width: 250px;
+  min-width: 230px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.food-delivery {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWMhcZv2MJL83-jMWhJvWjOrcZ7v4HOe5Znw&s");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 60px;
+}
+
+.dineout {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQztBC_a9hpp_w3JvSMnnZqUDjTl1hWmvk4FQ&s");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 50px;
+}
+
+.card-discount {
+  font-weight: bold;
+  color: #ff5a1f;
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.explore-button {
+  background-color: #ff5a1f;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  align-self: flex-start;
+}
+
+.food-delivery h3,
+.dineout h3 {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.food-delivery p,
+.dineout p {
+  margin-top: -10px;
+}
+
+/* Mobile Styles */
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
+
+  .hero-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .search-bar-row {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .swiggy-card-section {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 12px;
+    padding-bottom: 8px;
+  }
+
+  .swiggy-card {
+    width: 38%;
+    min-width: 100px;
+    height: 100px;
+    padding: 16px;
+  }
+
+  .top-nav-button {
+    padding: 4px 10px;
+    border-radius: 16px;
+  }
+
+  .swiggy-top-nav {
+    gap: 12px;
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+}
+
+
