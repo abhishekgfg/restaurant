@@ -40,7 +40,7 @@ const MenuPage = () => {
   };
 
   return (
-    <div className="menu-page">
+    <div className="menu-page1">
       <h2 className="section-title">Browse Categories</h2>
       <CategoryGrid />
 
