@@ -125,6 +125,73 @@ const HomePage = () => {
     arrows: false
   };
 
+
+
+  const hotProducts = [
+  {
+    name: "Normal Tea",
+    price: 20,
+    desc: "Deliciously brewed Normal Tea to brighten your day.",
+    image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2025/6/18/def06c05-b27b-4669-be62-4630f2ce1bbd_654087.jpg",
+  },
+  {
+    name: "Burger",
+    price: 30,
+    desc: "Deliciously brewed Masala Tea to brighten your day.",
+    image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2025/6/9/5e386121-e864-4cfc-84ce-12ac9753edba_725082.JPG",
+  },
+  {
+    name: "Pizza  ",
+    price: 30,
+    desc: "Deliciously brewed Ginger Tea to brighten your day.",
+    image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2025/6/9/5e386121-e864-4cfc-84ce-12ac9753edba_725082.JPG",
+  },
+  {
+    name: "Cold Coffee",
+    price: 40,
+    desc: "Chilled cold coffee to refresh your mood.",
+    image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2025/6/9/5e386121-e864-4cfc-84ce-12ac9753edba_725082.JPG",
+  },
+  {
+    name: "Pizza",
+    price: 25,
+    desc: "Fresh lemon soda with a fizzy twist.",
+    image: "https://via.placeholder.com/150?text=Lemon+Soda",
+  },
+  {
+    name: "Oreo Shake",
+    price: 50,
+    desc: "Creamy oreo shake for cookie lovers.",
+    image: "https://via.placeholder.com/150?text=Oreo+Shake",
+  },
+  {
+    name: "Strawberry Shake",
+    price: 45,
+    desc: "Sweet strawberry shake with real fruit.",
+    image: "https://via.placeholder.com/150?text=Strawberry+Shake",
+  },
+  {
+    name: "Mango Lassi",
+    price: 35,
+    desc: "Chilled mango lassi made with fresh yogurt.",
+    image: "https://via.placeholder.com/150?text=Mango+Lassi",
+  },
+   {
+    name: "Lemon Soda",
+    price: 25,
+    desc: "Fresh lemon soda with a fizzy twist.",
+    image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2025/6/18/def06c05-b27b-4669-be62-4630f2ce1bbd_654087.jpg",
+  },
+  {
+    name: "Oreo Shake",
+    price: 50,
+    desc: "Creamy oreo shake for cookie lovers.",
+    image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ed517d693c01179f5a25d5320ce9fcab",
+  },
+ 
+];
+
+
   return (
   <div className="homepage-container">
     
@@ -221,6 +288,120 @@ const HomePage = () => {
         </div>
       </section>
       {/* <TestimonialPage /> */}
+           <section className="hot-products-wrapper">
+      <div className="hot-products-header">
+        <h2>Hot Products</h2>
+        <a href="#" className="see-all-link">See All</a>
+      </div>
+      <div className="hot-products-list">
+        {hotProducts.map((item, index) => (
+          <div className="product-card" key={index}>
+            <div className="product-img">
+              <img src={item.image} alt={item.name} />
+              <span className="add-tag">ADD</span>
+            </div>
+            <div className="product-details">
+              <h4>{item.name}</h4>
+              <p>₹{item.price}</p>
+              <p className="desc">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+<section className="testimonial-section">
+  <div className="testimonial-header">
+    <h2>What Customers Say</h2>
+   
+  </div>
+
+  <div className="testimonial-slider">
+    <div className="testimonial-card">
+      <div className="user-info">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Riya Sharma" />
+        <div>
+          <h4>Riya Sharma</h4>
+          <span>Delhi</span>
+        </div>
+      </div>
+      <p>
+        Amazing food! Delivered hot and fresh every time. Loved the combos and
+        the taste is unbeatable.
+      </p>
+    </div>
+
+    <div className="testimonial-card">
+      <div className="user-info">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Aman Verma" />
+        <div>
+          <h4>Aman Verma</h4>
+          <span>Mumbai</span>
+        </div>
+      </div>
+      <p>
+        Very convenient service. Fast delivery and excellent quality. Totally
+        satisfied with the meals!
+      </p>
+    </div>
+
+    <div className="testimonial-card">
+      <div className="user-info">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Neha Kapoor" />
+        <div>
+          <h4>Neha Kapoor</h4>
+          <span>Bangalore</span>
+        </div>
+      </div>
+      <p>
+        Loved the dineout offers! Food is tasty and staff is very polite. Will
+        definitely come back!
+      </p>
+    </div>
+
+    <div className="testimonial-card">
+      <div className="user-info">
+        <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Raj Malhotra" />
+        <div>
+          <h4>Raj Malhotra</h4>
+          <span>Hyderabad</span>
+        </div>
+      </div>
+      <p>
+        Excellent packaging and super fast delivery. The app is easy to use and
+        the deals are great.
+      </p>
+    </div>
+
+    <div className="testimonial-card">
+      <div className="user-info">
+        <img src="https://randomuser.me/api/portraits/women/90.jpg" alt="Priya Nair" />
+        <div>
+          <h4>Priya Nair</h4>
+          <span>Chennai</span>
+        </div>
+      </div>
+      <p>
+        The food is flavorful and they have great vegetarian options. Also
+        impressed by the hygiene.
+      </p>
+    </div>
+
+    <div className="testimonial-card">
+      <div className="user-info">
+        <img src="https://randomuser.me/api/portraits/men/20.jpg" alt="Deepak Singh" />
+        <div>
+          <h4>Deepak Singh</h4>
+          <span>Kolkata</span>
+        </div>
+      </div>
+      <p>
+        Quick service and great user experience. I order regularly and it’s
+        always consistent!
+      </p>
+    </div>
+  </div>
+</section>
+
     </div>
     
   );

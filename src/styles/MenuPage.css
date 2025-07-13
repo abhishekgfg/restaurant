@@ -263,9 +263,4 @@
   gap: 1rem;
 }
 
-@media (max-width: 768px) {
-  .menu-page {
-    margin-top: 50px;
-  }
-}
 

@@ -81,45 +81,66 @@ const Header = () => {
   <div className={`swiggy-hero-mobile-only mobile-only`}>
   <div className={`hero-sticky-top ${isMobileSticky ? "sticky-active" : ""}`}>
     <div className="swiggy-top-nav">
-      <Link to="#" className="top-nav-link">Menu</Link>
+      <Link to="/menu" className="top-nav-link">
+  <MdMenu style={{ marginRight: "6px", verticalAlign: "middle" }} />
+  Menu
+</Link>
+
       <Link to="#" className="top-nav-link">Exclusive Offers</Link>
       <button className="top-nav-button">Get the App</button>
-      <FaUser className="top-nav-user" />
+      <Link to="/account" className="top-nav-link">
+  <FaUser className="top-nav-user" />
+
+</Link>
+
     </div>
     <hr className="hero-divider" />
+    <div className="hero-search-mobile">
+  <FaSearch className="search-icon" />
+  <input
+    type="text"
+    placeholder="Search for restaurants, items, or cuisines"
+    className="search-input-mobile"
+  />
+</div>
+
   </div>
+  
 
-  <h1 className="hero-title">Order food. Discover best restaurants. Swiggy it!</h1>
+    {isHomePage && (
+    <>
+      <h1 className="hero-title">
+        Order food. Discover best restaurants. Swiggy it!
+      </h1>
 
-  <div className="search-bar-row">
-    <div className="location-dropdown">
-      <span>📍</span>
-      <select>
-        <option>845438-PW76, Bettiah</option>
-      </select>
-    </div>
+      <div className="search-bar-row">
+        <div className="location-dropdown">
+          <span>📍</span>
+          <select>
+            <option>harivatika, Bettiah</option>
+          </select>
+        </div>
 
-    <div className="hero-search-box">
-      <FaSearch />
-      <input type="text" placeholder="Search for restaurant, items, or cuisine" />
-    </div>
-  </div>
+        
+      </div>
 
-  <div className="swiggy-card-section">
-    <div className="swiggy-card food-delivery">
-      <h3>FOOD DELIVERY</h3>
-      <p>From Restaurants</p>
-      <p className="card-discount">UPTO 60% OFF</p>
-      <button className="explore-button">Explore</button>
-    </div>
+      <div className="swiggy-card-section">
+        <div className="swiggy-card food-delivery">
+          <h3>FOOD DELIVERY</h3>
+          <p>From Restaurants</p>
+          <p className="card-discount">UPTO 60% OFF</p>
+          <button className="explore-button">Explore</button>
+        </div>
 
-    <div className="swiggy-card dineout">
-      <h3>DINEOUT</h3>
-      <p>Eat Out & Save </p>
-      <p className="card-discount">UPTO 50% OFF</p>
-      <button className="explore-button">Explore</button>
-    </div>
-  </div>
+        <div className="swiggy-card dineout">
+          <h3>DINEOUT</h3>
+          <p>Eat Out & Save</p>
+          <p className="card-discount">UPTO 50% OFF</p>
+          <button className="explore-button">Explore</button>
+        </div>
+      </div>
+    </>
+  )}
 
 
 
@@ -142,28 +163,30 @@ const Header = () => {
       )}
 
       {/* Mobile Bottom Nav */}
-      <nav className="mobile-bottom-nav mobile-only">
-        <Link to="/" className="nav-item">
-          <AiFillHome className="icon" />
-          <span>Home</span>
-        </Link>
-        <div className="nav-item">
-          <FaSearch className="icon" />
-          <span>Search</span>
-        </div>
-        <Link to="/menu" className="nav-item">
-          <MdMenu className="icon" />
-          <span>Menu</span>
-        </Link>
-        <Link to="/cart" className="nav-item">
-          <FaShoppingBag className="icon" />
-          <span>Cart</span>
-        </Link>
-        <Link to="/account" className="nav-item">
-          <FaUser className="icon" />
-          <span>Account</span>
-        </Link>
-      </nav>
+   <nav className="mobile-nav-bar1 mobile-only1">
+  <Link to="/" className="mobile-nav-item1">
+    <AiFillHome className="mobile-nav-icon1" />
+    <span>Home</span>
+  </Link>
+  <Link to="#" className="mobile-nav-item1">
+    <FaSearch className="mobile-nav-icon1" />
+    <span>Search</span>
+  </Link>
+  <Link to="/menu" className="mobile-nav-item1">
+    <MdMenu className="mobile-nav-icon1" />
+    <span>Menu</span>
+  </Link>
+  <Link to="/cart" className="mobile-nav-item1">
+    <FaShoppingBag className="mobile-nav-icon1" />
+    <span>Cart</span>
+  </Link>
+  <Link to="/account" className="mobile-nav-item1">
+    <FaUser className="mobile-nav-icon1" />
+    <span>Account</span>
+  </Link>
+</nav>
+
+
     </>
   );
 };
