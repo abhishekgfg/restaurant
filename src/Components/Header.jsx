@@ -82,8 +82,8 @@ const Header = () => {
   <div className={`hero-sticky-top ${isMobileSticky ? "sticky-active" : ""}`}>
     <div className="swiggy-top-nav">
       <Link to="/menu" className="top-nav-link">
-  <MdMenu style={{ marginRight: "6px", verticalAlign: "middle" }} />
-  Menu
+  <MdMenu style={{ marginRight: "40px", verticalAlign: "middle" }} />
+  
 </Link>
 
       <Link to="#" className="top-nav-link">Exclusive Offers</Link>
