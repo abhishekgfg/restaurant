@@ -20,7 +20,12 @@ const Header = () => {
 
   const location = useLocation();
   const isHomePage = location.pathname === "/";
-
+  const [isLoading, setIsLoading] = useState(true);
+useEffect(() => {
+  // Simulate loading delay
+  const timeout = setTimeout(() => setIsLoading(false), 1000); // Adjust time as needed
+  return () => clearTimeout(timeout);
+}, []);
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -39,6 +44,15 @@ const Header = () => {
   window.addEventListener("scroll", handleScroll);
   return () => window.removeEventListener("scroll", handleScroll);
 }, []);
+
+
+if (isLoading) {
+  return (
+    <div className="loader-container">
+      <div className="spinner" />
+    </div>
+  );
+}
 
   return (
     <>
