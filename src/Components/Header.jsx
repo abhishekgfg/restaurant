@@ -127,7 +127,7 @@ const Header = () => {
       <div className="swiggy-card-section">
         <div className="swiggy-card food-delivery">
           <h3>FOOD DELIVERY</h3>
-          <p>From Restaurants</p>
+          <p>Restaurants</p>
           <p className="card-discount">UPTO 60% OFF</p>
           <button className="explore-button">Explore</button>
         </div>
