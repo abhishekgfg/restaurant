@@ -153,7 +153,7 @@ const Header = () => {
     {isHomePage && (
     <>
       <h1 className="hero-title">
-        Order food. Discover best restaurants. Swiggy it!
+       Food delivery reimagined. Welcome to 9 to 9.
       </h1>
 
       <div className="search-bar-row">
@@ -177,7 +177,7 @@ const Header = () => {
 
         <div className="swiggy-card dineout">
           <h3>SPECIAL</h3>
-          <p>NINE TO NINE</p>
+          <p>9 to 9</p>
          
          <Link to="/nine-specials" className="explore-button">Explore</Link>
 
