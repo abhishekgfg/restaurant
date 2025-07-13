@@ -128,15 +128,16 @@ const Header = () => {
         <div className="swiggy-card food-delivery">
           <h3>FOOD DELIVERY</h3>
           <p>Restaurants</p>
-          <p className="card-discount">UPTO 60% OFF</p>
+          {/* <p className="card-discount">UPTO 60% OFF</p> */}
           <button className="explore-button">Explore</button>
         </div>
 
         <div className="swiggy-card dineout">
-          <h3>DINEOUT</h3>
-          <p>Eat Out & Save</p>
-          <p className="card-discount">UPTO 50% OFF</p>
-          <button className="explore-button">Explore</button>
+          <h3>SPECIAL</h3>
+          <p>NINE TO NINE</p>
+         
+         <Link to="/nine-specials" className="explore-button">Explore</Link>
+
         </div>
       </div>
     </>
