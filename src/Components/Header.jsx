@@ -95,16 +95,15 @@ if (isLoading) {
   <div className={`swiggy-hero-mobile-only mobile-only`}>
   <div className={`hero-sticky-top ${isMobileSticky ? "sticky-active" : ""}`}>
     <div className="swiggy-top-nav">
-      <Link to="/menu" className="top-nav-link">
-  <MdMenu style={{ marginRight: "40px", verticalAlign: "middle" }} />
-  
+     <Link to="/menu" className="top-nav-link">
+  <MdMenu style={{ fontSize: "24px", marginRight: "40px", verticalAlign: "middle" }} />
 </Link>
+
 
       <Link to="#" className="top-nav-link">Exclusive Offers</Link>
       <button className="top-nav-button">Get the App</button>
-      <Link to="/account" className="top-nav-link">
-  <FaUser className="top-nav-user" />
-
+<Link to="/account" className="top-nav-link">
+  <FaUser className="top-nav-user" style={{ fontSize: "24px" }} />
 </Link>
 
     </div>
