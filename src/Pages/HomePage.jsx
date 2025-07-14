@@ -126,69 +126,87 @@ const HomePage = () => {
   };
 
 
-
-  const hotProducts = [
+const hotProducts = [
   {
     name: "Normal Tea",
     price: 20,
     desc: "Deliciously brewed Normal Tea to brighten your day.",
     image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2025/6/18/def06c05-b27b-4669-be62-4630f2ce1bbd_654087.jpg",
+    rating: 4.2,
+    time: "20-25 mins"
   },
   {
     name: "Burger",
     price: 30,
-    desc: "Deliciously brewed Masala Tea to brighten your day.",
+    desc: "Tasty and satisfying burger treat.",
     image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2025/6/9/5e386121-e864-4cfc-84ce-12ac9753edba_725082.JPG",
+    rating: 4.5,
+    time: "25-30 mins"
   },
   {
-    name: "Pizza  ",
+    name: "Pizza",
     price: 30,
-    desc: "Deliciously brewed Ginger Tea to brighten your day.",
+    desc: "Crispy base with cheese overload.",
     image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2025/6/9/5e386121-e864-4cfc-84ce-12ac9753edba_725082.JPG",
+    rating: 4.4,
+    time: "30-35 mins"
   },
   {
     name: "Cold Coffee",
     price: 40,
     desc: "Chilled cold coffee to refresh your mood.",
     image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2025/6/9/5e386121-e864-4cfc-84ce-12ac9753edba_725082.JPG",
+    rating: 4.1,
+    time: "15-20 mins"
   },
   {
     name: "Pizza",
     price: 25,
-    desc: "Fresh lemon soda with a fizzy twist.",
+    desc: "Freshly baked with a fizzy twist.",
     image: "https://via.placeholder.com/150?text=Lemon+Soda",
+    rating: 4.0,
+    time: "30 mins"
   },
   {
     name: "Oreo Shake",
     price: 50,
     desc: "Creamy oreo shake for cookie lovers.",
     image: "https://via.placeholder.com/150?text=Oreo+Shake",
+    rating: 4.6,
+    time: "10-15 mins"
   },
   {
     name: "Strawberry Shake",
     price: 45,
     desc: "Sweet strawberry shake with real fruit.",
     image: "https://via.placeholder.com/150?text=Strawberry+Shake",
+    rating: 4.3,
+    time: "15-20 mins"
   },
   {
     name: "Mango Lassi",
     price: 35,
     desc: "Chilled mango lassi made with fresh yogurt.",
     image: "https://via.placeholder.com/150?text=Mango+Lassi",
+    rating: 4.1,
+    time: "15-20 mins"
   },
-   {
+  {
     name: "Lemon Soda",
     price: 25,
     desc: "Fresh lemon soda with a fizzy twist.",
     image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2025/6/18/def06c05-b27b-4669-be62-4630f2ce1bbd_654087.jpg",
+    rating: 3.9,
+    time: "10-15 mins"
   },
   {
     name: "Oreo Shake",
     price: 50,
     desc: "Creamy oreo shake for cookie lovers.",
     image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ed517d693c01179f5a25d5320ce9fcab",
+    rating: 4.6,
+    time: "10 mins"
   },
- 
 ];
 
 
@@ -254,11 +272,11 @@ const HomePage = () => {
     </div>
     <div className="swiggy-feature-card">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv4Q1N6Dl1fiqMQX8Q-pTxi54AgZ-XtkJzOQ&s" alt="Bolt" />
-      <p>BOLT<br />FOOD IN 10 MINS</p>
+      <p>FOOD IN<br /> 10 MINS</p>
     </div>
     <div className="swiggy-feature-card">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv4Q1N6Dl1fiqMQX8Q-pTxi54AgZ-XtkJzOQ&s" alt="Bolt" />
-      <p>BOLT<br />FOOD IN 10 MINS</p>
+      <p>FOOD  IN <br /> IN 10 MINS</p>
     </div>
   </div>
 </section>
@@ -287,28 +305,35 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      {/* <TestimonialPage /> */}
-           <section className="hot-products-wrapper">
-      <div className="hot-products-header">
-        <h2>Hot Products</h2>
-        <a href="#" className="see-all-link">See All</a>
-      </div>
-      <div className="hot-products-list">
-        {hotProducts.map((item, index) => (
-          <div className="product-card" key={index}>
-            <div className="product-img">
-              <img src={item.image} alt={item.name} />
-              <span className="add-tag">ADD</span>
-            </div>
-            <div className="product-details">
-              <h4>{item.name}</h4>
-              <p>₹{item.price}</p>
-              <p className="desc">{item.desc}</p>
-            </div>
+     
+
+         <section className="hot-products-wrapper">
+  <div className="hot-products-header">
+    <h2>Hot Products</h2>
+    <a href="#" className="see-all-link">See All</a>
+  </div>
+
+  <div className="hot-products-list">
+    {hotProducts.map((item, index) => (
+      <div className="product-card" key={index}>
+        <div className="product-img">
+          <img src={item.image} alt={item.name} />
+          <span className="add-tag">ADD</span>
+        </div>
+        <div className="product-details">
+          <h4>{item.name}</h4>
+          <p>₹{item.price}</p>
+          <p className="desc">{item.desc}</p>
+          <div className="rating-time">
+            <span className="rating">⭐ {item.rating}</span>
+            <span className="time">{item.time}</span>
           </div>
-        ))}
+        </div>
       </div>
-    </section>
+    ))}
+  </div>
+</section>
+
 <section className="testimonial-section">
   <div className="testimonial-header">
     <h2>What Customers Say</h2>
