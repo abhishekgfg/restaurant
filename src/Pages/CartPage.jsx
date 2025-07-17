@@ -1,5 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
 import '../styles/CartPage.css';
+import { MdLocationOn } from 'react-icons/md';
+const handlePayment = () => {
+  const options = {
+    key: "YOUR_RAZORPAY_KEY_ID", // Replace with your Razorpay key
+    amount: grandTotal * 100, // Amount is in paise
+    currency: "INR",
+    name: "Nine to Nine Restaurant",
+    description: "Order Payment",
+    handler: function (response) {
+      alert(`Payment Successful. Payment ID: ${response.razorpay_payment_id}`);
+      // Optionally redirect or save response to DB
+    },
+    prefill: {
+      name: "Abhishek Kumar",
+      email: "abhishek@example.com",
+      contact: "6202000340"
+    },
+    notes: {
+      address: "Green Residency, Patna"
+    },
+    theme: {
+      color: "#fc8019"
+    }
+  };
+
+  const rzp = new window.Razorpay(options);
+  rzp.open();
+};
+
+;
+
 
 const dummyCart = [
   {
@@ -30,7 +62,12 @@ const CartPage = () => {
       )
     );
   };
-
+useEffect(() => {
+  const script = document.createElement("script");
+  script.src = "https://checkout.razorpay.com/v1/checkout.js";
+  script.async = true;
+  document.body.appendChild(script);
+}, [])
   const decrementQty = (id) => {
     setCartItems((items) =>
       items.map((item) =>
@@ -45,6 +82,25 @@ const CartPage = () => {
   const gst = 46.7;
   const grandTotal = itemTotal + deliveryFee + gst;
 
+  const handleGetLocation = () => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      position => {
+        const { latitude, longitude } = position.coords;
+        console.log("Latitude:", latitude, "Longitude:", longitude);
+        // You can set this to a map or use reverse geocoding here
+      },
+      error => {
+        alert("Location access denied or unavailable.");
+        console.error("Error:", error);
+      }
+    );
+  } else {
+    alert("Geolocation is not supported by this browser.");
+  }
+};
+
+
   return (
     <div className="cart-layout">
 
@@ -55,9 +111,17 @@ const CartPage = () => {
           <h3>Save delivery address</h3>
         </div>
         <div className="sidebar1-scroll">
-          <div className="map-container">
-            🗺️ Google Map Placeholder
-          </div>
+       <div className="map-container" id="map">
+  Loading map...
+</div>
+
+
+<div className="sync-location-wrapper">
+  <button className="sync-location-btn" onClick={handleGetLocation}>
+    📍 Sync Location
+  </button>
+</div>
+
           <div className="address-form">
             <label>Address</label>
             <input type="text" placeholder="Auto-filled address or type manually" />
@@ -107,31 +171,51 @@ const CartPage = () => {
       </div>
 
       {/* LEFT SIDE */}
-      <div className="cart-left">
-        <div className="login-strip">👤 Abhishek Kumar | 6202000340</div>
-        <div className="step-box address-section">
-          <div className="step-icon">📍</div>
+   <div className="cart-left">
+  <div className="login-strip">👤 Abhishek Kumar | 6202000340</div>
+
+  <div className="step-box address-section">
+    <MdLocationOn className="location-icon2" />
+    <div>
+      <h3>Add a delivery address</h3>
+      <p>You seem to be in a new location</p>
+
+      {/* Sample Delivery Address Card */}
+      <div className="address-card sample-address">
+        <div className="address-card-title">
+          <MdLocationOn className="location-icon" />
           <div>
-            <h3>Add a delivery address</h3>
-            <p>You seem to be in a new location</p>
-            <div className="address-card">
-              <p>📍 Add New Address</p>
-              <button onClick={() => setIsSidebarOpen(true)}>ADD NEW</button>
-            </div>
+            <p className="address-title">Home</p>
+            <p className="address-text">401, Green Residency, Near City Mall, Patna - 800001</p>
           </div>
         </div>
-        <div className="payment-card">
-          <h4>Choose Payment Method</h4>
-          <div className="payment-options">
-            <button>PhonePe</button>
-            <button>GPay</button>
-            <button>Paytm</button>
-            <button>Credit / Debit Card</button>
-            <button>UPI</button>
-            <button>Cash on Delivery</button>
-          </div>
-        </div>
+        <button className="change-address-btn">Change</button>
       </div>
+
+      {/* Add New Address Card */}
+      <div className="address-card">
+        <div className="address-card-title">
+          <MdLocationOn className="location-icon" />
+          <p>Add New Address</p>
+        </div>
+        <button className="add-new-btn" onClick={() => setIsSidebarOpen(true)}>ADD MORE</button>
+      </div>
+    </div>
+  </div>
+
+  {/* Payment Section */}
+  <div className="payment-card">
+    <h4>Choose Payment Method</h4>
+    <div className="payment-options">
+      <button>PhonePe</button>
+      <button>GPay</button>
+      <button>Paytm</button>
+      <button>Credit / Debit Card</button>
+      <button>UPI</button>
+      <button>Cash on Delivery</button>
+    </div>
+  </div>
+</div>
 
       {/* RIGHT SIDE */}
       <div className="cart-right">
@@ -188,10 +272,13 @@ const CartPage = () => {
           </div>
         </div>
 
-        <div className="to-pay">
-          <h4>TO PAY</h4>
-          <span>₹{grandTotal}</span>
-        </div>
+       <div className="to-pay">
+  <h4>TO PAY</h4>
+ <span style={{ marginTop: '20px', display: 'inline-block' }}>₹{grandTotal}</span>
+
+  <button className="pay-now-btn" onClick={handlePayment}>Proceed to Pay</button>
+</div>
+
 
         <div className="note-box">
           <h5>Review your order and address details to avoid cancellations</h5>

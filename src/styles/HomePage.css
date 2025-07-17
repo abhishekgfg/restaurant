@@ -562,6 +562,8 @@
 
 
 
+
+
 .hot-products-header {
   display: flex;
   justify-content: space-between;
@@ -591,9 +593,9 @@
 .product-card {
   background: #fff;
   border-radius: 10px;
-  width: 180px;
+  width: 195px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
+  
   flex-shrink: 0;
 }
 
@@ -643,6 +645,9 @@
   color: #555;
   margin-top: 4px;
 }
+.time{
+  margin-left: 40px;
+}
 
 /* Mobile Horizontal Scroll */
 @media (max-width: 768px) {
@@ -653,12 +658,16 @@
   }
 
   .product-card {
-    width: 140px;
+    width: 120px;
   }
 
   .hot-products-header h2 {
     font-size: 16px;
   }
+
+  .time{
+  margin-left:  10px;
+}
 }
 
 

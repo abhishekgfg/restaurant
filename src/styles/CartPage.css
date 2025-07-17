@@ -808,3 +808,110 @@
 
 }
 
+
+
+.address-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f7f7f7;
+  padding: 16px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  margin-bottom: 20px;
+}
+
+/* Left part with icon and label */
+.address-card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.location-icon {
+  font-size: 22px;
+  color: #ff5722;
+}
+
+/* Styled button */
+.add-new-btn {
+  background-color: #ff5722;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+}
+
+.add-new-btn:hover {
+  background-color: #e64a19;
+}
+
+
+.location-icon2  {
+  font-size: 22px;
+  color: #ff5722;
+  margin-top: 20px;
+  
+}
+
+
+.pay-now-btn {
+  background-color: #fc8019;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.pay-now-btn:hover {
+  background-color: #e46d0c;
+}
+
+
+.map-container {
+  background-color: #f9f9f9;
+  border: 2px dashed #ccc;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+  font-size: 16px;
+  color: #444;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.sync-location-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #00c853; /* Swiggy-style green */
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sync-location-btn:hover {
+  background-color: #00b347;
+}
+
+.sync-location-btn:active {
+  transform: scale(0.98);
+}

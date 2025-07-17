@@ -20,6 +20,41 @@ const AccountPage = () => {
  const handleLanguageChange = (lang) => {
     i18n.changeLanguage(lang);
   };
+const [showCardModal, setShowCardModal] = useState(false);
+const [showQR, setShowQR] = useState(false);
+const [filter, setFilter] = useState("All");
+
+const allTransactions = [
+  { id: 1, date: "2025-07-01", method: "UPI", amount: "₹250", status: "Success" },
+  { id: 2, date: "2025-07-02", method: "Card", amount: "₹599", status: "Failed" },
+];
+const filteredTransactions = allTransactions.filter(txn =>
+  filter === "All" || txn.method === filter || txn.status === filter
+);
+
+const handleRazorpay = () => {
+  const options = {
+    key: "YOUR_RAZORPAY_KEY_ID",
+    amount: 50000,
+    currency: "INR",
+    name: "Nine to Nine Restaurant",
+    description: "Order Payment",
+    handler: (response) => {
+      alert("Payment Successful");
+      console.log(response);
+    },
+    prefill: {
+      name: "Abhishek",
+      email: "test@example.com",
+      contact: "9876543210"
+    },
+    theme: {
+      color: "#F97316"
+    }
+  };
+  const rzp = new window.Razorpay(options);
+  rzp.open();
+};
 
   return (
     <div className="account-wrapper">
@@ -213,12 +248,76 @@ const AccountPage = () => {
 )}
 
           {/* Payments Section */}
-          {activeSection === "payments" && (
-            <section className="section-content">
-              <h2>Payment Methods</h2>
-              <p>No payment methods linked to your account.</p>
-            </section>
-          )}
+        {activeSection === "payments" && (
+  <section className="payment-section fade-slide-in">
+    <h2 className="payment-title">💳 Payment Methods</h2>
+
+    {/* Saved Card */}
+    <div className="saved-card">
+      <h4>Saved Card</h4>
+      <div className="card-info">
+        <div className="card-icon">💳</div>
+        <div>
+          <p className="card-number">**** **** **** 1234</p>
+          <p className="card-type">VISA</p>
+        </div>
+        <button className="remove-card">Remove</button>
+      </div>
+    </div>
+
+    {/* Add Payment Method */}
+    <div className="add-payment-method">
+      <h4>Add Payment Method</h4>
+      <div className="payment-options">
+        <button className="payment-btn upi" onClick={() => setShowQR(true)}>📷 QR UPI</button>
+        <button className="payment-btn gpay">🔵 GPay</button>
+        <button className="payment-btn phonepe">🟣 PhonePe</button>
+        <button className="payment-btn paytm">🔷 Paytm</button>
+      
+        <button className="payment-btn razor" onClick={handleRazorpay}>⚡ Razorpay</button>
+      </div>
+    </div>
+
+    {/* QR UPI Modal */}
+    {showQR && (
+      <div className="qr-modal">
+        <div className="qr-container">
+          <h3>Scan & Pay via UPI</h3>
+          <img src="/qr-code.png" alt="UPI QR" className="qr-img" />
+          <button onClick={() => setShowQR(false)} className="close-btn">Close</button>
+        </div>
+      </div>
+    )}
+
+   
+    {/* Security Note */}
+    <div className="secure-note">
+      <p>🔒 Your payments are 100% secure & encrypted.</p>
+    </div>
+
+    {/* Transaction History */}
+    <div className="transaction-history">
+      <h4>Transaction History</h4>
+      <div className="filter-buttons">
+        {["All", "Card", "UPI", "Success", "Failed"].map(f => (
+          <button key={f} onClick={() => setFilter(f)} className={`filter-btn ${filter === f ? 'active' : ''}`}>{f}</button>
+        ))}
+      </div>
+      <ul className="transaction-list">
+        {filteredTransactions.map(txn => (
+          <li key={txn.id} className="transaction-item">
+            <span>{txn.date}</span>
+            <span>{txn.method}</span>
+            <span>{txn.amount}</span>
+            <span className={txn.status === "Success" ? "text-green-600" : "text-red-500"}>
+              {txn.status}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}
 
           {/* Addresses Section */}
           {activeSection === "addresses" && (
