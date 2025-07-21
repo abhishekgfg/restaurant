@@ -698,3 +698,94 @@ body {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+
+/* Active Link Styling */
+.nav-item.active-link .icon,
+.nav-item.active-link .nav-text {
+  color: orange;
+  font-weight: bold;
+}
+
+.mobile-nav-item1.active-link .mobile-nav-icon1,
+.mobile-nav-item1.active-link span {
+  color: orange;
+  font-weight: bold;
+}
+
+
+
+.search-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.search-popup {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  position: relative;
+}
+
+.close-search-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.search-popup-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.popup-search-icon {
+  font-size: 22px;
+  color: #888;
+}
+
+.popup-search-input {
+  flex: 1;
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 100%;
+}
+
+/* Extra responsive styles for very small screens */
+@media (max-width: 400px) {
+  .search-popup {
+    padding: 14px;
+    border-radius: 10px;
+  }
+
+  .popup-search-input {
+    padding: 8px 10px;
+    font-size: 15px;
+  }
+
+  .close-search-btn {
+    font-size: 22px;
+    top: 6px;
+    right: 10px;
+  }
+}

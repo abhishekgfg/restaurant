@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/Footer.css"; // Import the CSS file
 import footerBg from "../Images/footer-illustration.png";
-import logo from "../assets/nine-to-nine-logo.png";
+import logo from "../assets/image.png";
 import { IoLogoFacebook, IoLogoTwitter, IoLogoInstagram, IoLogoPinterest } from "react-icons/io";
 
 
